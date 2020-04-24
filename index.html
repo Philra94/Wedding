@@ -65,13 +65,13 @@
                         <div class="row aln-center">
 							<div class="col-5 col-12-medium">
 								<section class="highlight">
-									<a class="image featured"><img src="images/StLambertus1.jpg" alt="" /></a>
+									<a class="image featured"><img src="images/Lambertus2_small.jpg" alt=""/></a>
 									<h3>St. Lambertus, Mingolsheim</h3>
 								</section>
 							</div>
 							<div class="col-5 col-12-medium">
 								<section class="highlight">
-									<a href="https://palmeri.de/privates-catering/locations/p-im-palazzino/" class="image featured"><img src="images/Palmeri1.jpg" alt="" /></a>
+									<a href="https://palmeri.de/privates-catering/locations/p-im-palazzino/" class="image featured"><img src="images/Palmeri1_small.jpg" alt="" /></a>
 									<h3><a href="https://palmeri.de/privates-catering/locations/p-im-palazzino/">Palmeri, Östringen</a></h3>
 
 								</section>
@@ -103,6 +103,11 @@
 									<h2>Ablauf im Überblick</h2>
 									<p>Ist ja noch ein wenig Zeit! Genauere Infos folgen..</p>
 								</header>
+                                
+                                <div class="row aln-center">
+                                    <img src="images/leaf%20frame%2014.png" style="width:25em; margin-bottom: 3em">
+                                </div>
+                                
 <!--
 								<div class="feature-list">
 									<div class="row">
@@ -208,11 +213,11 @@
 							</p>
 						</header>
 						<div class="row">
+<!--
 							<div class="col-6 col-12-medium">
 
-								<!-- Contact Form -->
 									<section>
-										<form method="GET" action="mailto:rau-brecht@web.de" enctype="text/plain">
+										<form method="get" action="mailto:rau-brecht@web.de" enctype="text/plain">
 											<div class="row gtr-50">
 												<div class="col-6 col-12-small">
 													<input type="text" name="Name" id="contact-name" placeholder="Name" />
@@ -225,8 +230,8 @@
 												</div>
 												<div class="col-12">
 													<ul class="actions">
-														<li><input type="submit" class="style1" value="Send" /></li>
-														<li><input type="reset" class="style2" value="Reset" /></li>
+														<li><input type="submit" class="style1" name="submit" value="Send" /></li>
+														<li><input type="reset" class="style2" name="reset" value="Reset" /></li>
 													</ul>
 												</div>
 											</div>
@@ -234,7 +239,8 @@
 									</section>
 
 							</div>
-							<div class="col-6 col-12-medium">
+-->
+							<div class="col-12 col-12-medium">
 
 								<!-- Contact -->
 									<section class="feature-list small">
@@ -248,23 +254,11 @@
 													</p>
 												</section>
 											</div>
-<!--
-											<div class="col-6 col-12-small">
-												<section>
-													<h3 class="icon solid fa-comment">Social</h3>
-													<p>
-														<a href="#">@untitled-corp</a><br />
-														<a href="#">linkedin.com/untitled</a><br />
-														<a href="#">facebook.com/untitled</a>
-													</p>
-												</section>
-											</div>
--->
 											<div class="col-6 col-12-small">
 												<section>
 													<h3 class="icon solid fa-envelope">Email</h3>
 													<p>
-														<a href="#">rau-brecht@web.de</a>
+														<a href="mailto:rau-brecht@web.de">rau-brecht@web.de</a>
 													</p>
 												</section>
 											</div>
@@ -292,36 +286,8 @@
 		</div>
 
 		<!-- Scripts -->
-            
-<script>
-   var form = document.getElementsByTagName('form')[0];
-   form.addEventListener('submit',contact,false);
-   function contact(e) {
-      // Prevent Default Form Submission
-      e.preventDefault();
 
-      var target = e.target || e.srcElement;
-      var i = 0;
-      var message = '';
 
-      // Loop Through All Input Fields
-      for(i = 0; i < target.length; ++i) {
-         // Check to make sure it's a value. Don't need to include Buttons
-         if(target[i].type != 'text' && target[i].type != 'textarea') {
-                // Skip to next input since this one doesn't match our rules
-            continue;
-         }
-
-         // Add Input Name and value followed by a line break
-         message += target[i].name + ': ' + target[i].value + "\r\n";
-      }
-      // Modify the hidden body input field that is required for the mailto: scheme
-      target.elements["body"].value = message;
-
-      // Submit the form since we previously stopped it. May cause recursive loop in some browsers? Should research this.
-      this.submit();
-   }
-</script>
 			<script src="assets/js/jquery.min.js"></script>
 <!--			<script src="assets/js/jquery.dropotron.min.js"></script>-->
 			<script src="assets/js/browser.min.js"></script>
