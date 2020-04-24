@@ -61,12 +61,12 @@
 				<section id="intro" class="wrapper style1">
 					<div class="title">Wann und wo?</div>
 					<div class="container">
-						<p class="style2" style="padding-top: 0em!important;">Wir heiraten am 18.09.2021</p>
+						<p class="style2" style="padding-top: 0em!important;">Unsere Hochzeit findet am 18.09.2021 statt</p>
                         <div class="row aln-center">
 							<div class="col-5 col-12-medium">
 								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/StLambertus1.jpg" alt="" /></a>
-									<h3><a href="#">St. Lambertus, Mingolsheim</a></h3>
+									<a class="image featured"><img src="images/StLambertus1.jpg" alt="" /></a>
+									<h3>St. Lambertus, Mingolsheim</h3>
 								</section>
 							</div>
 							<div class="col-5 col-12-medium">
@@ -101,8 +101,9 @@
 							<section id="features">
 								<header class="style1">
 									<h2>Ablauf im Überblick</h2>
-									<p>Für die, die alles ganz genau wissen müssen...</p>
+									<p>Ist ja noch ein wenig Zeit! Genauere Infos folgen..</p>
 								</header>
+<!--
 								<div class="feature-list">
 									<div class="row">
 										<div class="col-6 col-12-medium">
@@ -135,16 +136,15 @@
 												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate et magna feugiat laoreet vel velit lorem.</p>
 											</section>
 										</div>
-<!--
 										<div class="col-6 col-12-medium">
 											<section>
 												<h3 class="icon solid fa-check">Dolore laoreet aliquam mattis</h3>
 												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate et magna feugiat laoreet vel velit lorem.</p>
 											</section>
 										</div>
--->
 									</div>
 								</div>
+-->
 <!--
 								<ul class="actions special">
 									<li><a href="#" class="button style1 large">Get Started</a></li>
@@ -157,6 +157,7 @@
 				</section>
 
 			<!-- Highlights -->
+<!--
 				<section id="highlights" class="wrapper style3">
 					<div class="title">OMG Geschenke?</div>
 					<div class="container">
@@ -194,6 +195,7 @@
 						</div>
 					</div>
 				</section>
+-->
 
 			<!-- Footer -->
 				<section id="footer" class="wrapper">
@@ -210,16 +212,16 @@
 
 								<!-- Contact Form -->
 									<section>
-										<form method="post" action="#">
+										<form method="GET" action="mailto:rau-brecht@web.de" enctype="text/plain">
 											<div class="row gtr-50">
 												<div class="col-6 col-12-small">
-													<input type="text" name="name" id="contact-name" placeholder="Name" />
+													<input type="text" name="Name" id="contact-name" placeholder="Name" />
 												</div>
 												<div class="col-6 col-12-small">
-													<input type="text" name="email" id="contact-email" placeholder="Email" />
+													<input type="text" name="E-Mail Address" id="contact-email" placeholder="Email" />
 												</div>
 												<div class="col-12">
-													<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+													<textarea name="Message" id="contact-message" placeholder="Message" rows="4"></textarea>
 												</div>
 												<div class="col-12">
 													<ul class="actions">
@@ -262,7 +264,7 @@
 												<section>
 													<h3 class="icon solid fa-envelope">Email</h3>
 													<p>
-														<a href="#">sucht.home@web.de</a>
+														<a href="#">rau-brecht@web.de</a>
 													</p>
 												</section>
 											</div>
@@ -270,7 +272,7 @@
 												<section>
 													<h3 class="icon solid fa-phone">Phone</h3>
 													<p>
-														(000) 555-0000
+														+49 176 476 41935
 													</p>
 												</section>
 											</div>
@@ -290,6 +292,36 @@
 		</div>
 
 		<!-- Scripts -->
+            
+<script>
+   var form = document.getElementsByTagName('form')[0];
+   form.addEventListener('submit',contact,false);
+   function contact(e) {
+      // Prevent Default Form Submission
+      e.preventDefault();
+
+      var target = e.target || e.srcElement;
+      var i = 0;
+      var message = '';
+
+      // Loop Through All Input Fields
+      for(i = 0; i < target.length; ++i) {
+         // Check to make sure it's a value. Don't need to include Buttons
+         if(target[i].type != 'text' && target[i].type != 'textarea') {
+                // Skip to next input since this one doesn't match our rules
+            continue;
+         }
+
+         // Add Input Name and value followed by a line break
+         message += target[i].name + ': ' + target[i].value + "\r\n";
+      }
+      // Modify the hidden body input field that is required for the mailto: scheme
+      target.elements["body"].value = message;
+
+      // Submit the form since we previously stopped it. May cause recursive loop in some browsers? Should research this.
+      this.submit();
+   }
+</script>
 			<script src="assets/js/jquery.min.js"></script>
 <!--			<script src="assets/js/jquery.dropotron.min.js"></script>-->
 			<script src="assets/js/browser.min.js"></script>
