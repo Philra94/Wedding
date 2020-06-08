@@ -2110,7 +2110,7 @@ input, select, textarea {
 
 		#logo p {
 			color: #eee;
-			color: rgba(255, 255, 255, 0.5);
+			color: rgba(255, 255, 255, 0.7);
 			margin: 2em 0 0 0;
 			display: block;
 			letter-spacing: 0.1em;
@@ -2286,7 +2286,7 @@ input, select, textarea {
 	#footer {
 		background: rgb(13,36,54) url("images/overlay.png");
 		color: #eee;
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(255, 255, 255, 0.7);
 		padding-bottom: 6em;
 	}
 
@@ -2366,7 +2366,7 @@ input, select, textarea {
 			}
 
 			#footer header.style1 .p {
-				color: inherit;
+				color: #fff;
 			}
 
 		#footer .feature-list {
